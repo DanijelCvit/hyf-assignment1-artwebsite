@@ -1,100 +1,110 @@
+/* Creator: Danijel Cvitkusic
+Link to introduction video (assignment 2): PUT LINK HERE */
+
+/* Reset defaults used by browser */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* measure actual box size */
 }
 
-.menu-container {
-  color: #fff;
-  background-color: #5995da;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
+body {
+  background-color: whitesmoke;
+  height: 3000px; /* For testing purposes ONLY */
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+header {
+  height: 150px;
+  margin-top: 35px;
+  border: 1px solid red; /* For debugging purposes */
+}
+
+.avatar {
+  margin: 10px;
+}
+
+.avatar img {
+  width: 100px;
+  border-radius: 50%;
 }
 
 .menu {
-  width: 900px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: whitesmoke;
 }
 
-.links {
-  display: flex;
-  justify-content: flex-end;
+.menu a {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  display: block;
+  padding-right: 15px;
 }
 
-.login {
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
   margin-left: 20px;
 }
 
-.header-container {
-  color: #5995da;
-  background-color: #d6e9fe;
+.gallery {
   display: flex;
-  justify-content: center;
-}
-
-.header {
-  width: 900px;
-  height: 300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.photo-grid-container {
-  display: flex;
-  justify-content: center;
-}
-
-.photo-grid {
-  width: 900px;
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-}
-
-.photo-grid-item {
-  border: 1px solid #fff;
-  width: 300px;
-  height: 300px;
-}
-
-.first-item {
-  order: 1;
-}
-
-.last-item {
-  order: -1;
-}
-
-.social,
-.subscribe {
-  align-self: flex-end;
   margin-bottom: 20px;
+  border: 1px solid red; /* For debugging purposes */
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
+.gallery-item {
+  position: relative;
+  margin: 20px;
+  border: 1px solid red; /* For debugging purposes */
 }
 
-.footer-item {
-  border: 1px solid #fff;
-  background-color: #d6e9fe;
-  height: 200px;
-  flex: 1;
+.gallery-item-large {
+  display: none;
 }
 
-.footer-one,
-.footer-three {
-  background-color: #5995da;
-  flex: initial;
-  width: 300px;
+.gallery-item:hover .gallery-item-large {
+  display: block;
+  position: absolute;
+  background-color: rgb(128, 0, 21);
+  top: 10px;
+  left: 10px;
+  max-width: 600px;
+  border: 1px solid red; /* For debugging purposes */
+  z-index: 1;
 }
 
-.signup {
-  margin-left: auto;
+.gallery-item-large img {
+  display: block;
+}
+
+.gallery-item > img {
+  display: block;
+  width: 200px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  /*border: 1px solid red; /* For debugging purposes */
+}
+
+/* Resize gallery items for mobile devices */
+@media screen and (max-width: 500px) {
+  .gallery-item > img {
+    width: 100px;
+  }
+
+  .gallery-item {
+    margin: 10px;
+  }
 }
