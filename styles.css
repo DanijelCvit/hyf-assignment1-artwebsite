@@ -19,8 +19,8 @@ body {
 }
 
 header {
-  height: 150px;
-  margin-top: 35px;
+  height: 120px;
+  border: 1px solid red; /* For debugging purposes */
 }
 
 .avatar {
@@ -32,21 +32,31 @@ header {
   border-radius: 50%;
 }
 
-.menu {
-  padding: 10px;
-  position: fixed;
+.navigation-bar {
+  position: sticky;
   width: 100%;
   top: 0px;
   background-color: whitesmoke;
   z-index: 2;
+  border: 1px solid red; /* For debugging purposes */
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu > li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.menu > li:last-of-type {
+  margin-right: 0px;
 }
 
 .menu a {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  float: left;
-  display: block;
-  padding-right: 15px;
 }
 
 h2 {
@@ -59,13 +69,16 @@ h2 {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid red; /* For debugging purposes */
 }
 
 .gallery-item {
+  display: flex;
   position: relative;
   margin: 20px;
   width: 100%;
   justify-content: center;
+  border: 1px solid red; /* For debugging purposes */
 }
 
 .gallery-item-large {
@@ -75,6 +88,7 @@ h2 {
   top: 10px;
   left: 10px;
   max-width: 600px;
+  border: 1px solid red; /* For debugging purposes */
   z-index: 1;
 }
 
@@ -84,7 +98,7 @@ h2 {
 
 .gallery-item > img {
   display: block;
-  margin: 0 auto;
+  width: 100%;
 }
 
 footer {
@@ -103,6 +117,7 @@ footer {
     top: 10px;
     left: 10px;
     max-width: 600px;
+    border: 1px solid red; /* For debugging purposes */
     z-index: 1;
   }
 
