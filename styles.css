@@ -18,20 +18,35 @@ body {
   margin: 0 auto;
 }
 
+/* Add avatar to header and title box */
 header {
-  height: 120px;
+  align-items: center;
+  display: flex;
+  justify-content: right;
   border: 1px solid red; /* For debugging purposes */
 }
 
 .avatar {
-  margin: 10px;
+  width: 20%;
+  margin: 10px 20px 10px 20px;
+  border: 1px solid red; /* For debugging purposes */
 }
 
 .avatar img {
   width: 100px;
   border-radius: 50%;
+  display: block;
 }
 
+.title {
+  width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 2em;
+  border: 1px solid red; /* For debugging purposes */
+}
+
+/* Pin nav bar to top and et menu items horizontally and align to right */
 .navigation-bar {
   position: sticky;
   width: 100%;
@@ -66,6 +81,7 @@ h2 {
   margin-top: 20px;
 }
 
+/* GALLERY */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +95,29 @@ h2 {
   width: 100%;
   justify-content: center;
   border: 1px solid red; /* For debugging purposes */
+}
+
+/* Image info text overlay */
+.overlay {
+  position: absolute;
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-left: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.text {
+  color: white;
+  quotes: "";
+  overflow: hidden;
+}
+
+.gallery-item:hover .overlay {
+  height: 5%;
 }
 
 .gallery-item-large {
@@ -101,6 +140,7 @@ h2 {
   width: 100%;
 }
 
+/* FOOTER */
 footer {
   background-color: black;
   color: white;
