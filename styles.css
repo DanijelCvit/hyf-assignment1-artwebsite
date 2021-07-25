@@ -1,7 +1,7 @@
 /* Creator: Danijel Cvitkusic
 Link to introduction video (assignment 2): PUT LINK HERE */
 
-/* Reset defaults used by browser */
+/* Reset some style defaults used by browser */
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +10,9 @@ Link to introduction video (assignment 2): PUT LINK HERE */
 
 body {
   background-color: whitesmoke;
-  height: 3000px; /* For testing purposes ONLY */
 }
 
-.container {
+.page {
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -46,7 +45,7 @@ header {
   border: 1px solid red; /* For debugging purposes */
 }
 
-/* Pin nav bar to top and et menu items horizontally and align to right */
+/* Pin nav bar to top and set menu items horizontally and align to right */
 .navigation-bar {
   position: sticky;
   width: 100%;
@@ -66,7 +65,7 @@ header {
 }
 
 .menu > li:last-of-type {
-  margin-right: 0px;
+  margin-right: 10px;
 }
 
 .menu a {
@@ -81,24 +80,28 @@ h2 {
   margin-top: 20px;
 }
 
-/* GALLERY */
+/*------------------------------- GALLERY ------------------------------------*/
 .gallery {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  margin: 0px 20px 0px 20px;
   border: 1px solid red; /* For debugging purposes */
 }
 
+/* Set item position to relative as anchor for overlay */
 .gallery-item {
-  display: flex;
   position: relative;
-  margin: 20px;
-  width: 100%;
-  justify-content: center;
   border: 1px solid red; /* For debugging purposes */
+}
+
+/* Turn image to block item to fill item box */
+.gallery-item img {
+  display: block;
+  height: 500px;
 }
 
 /* Image info text overlay */
-.overlay {
+.text-overlay {
   position: absolute;
   background-color: transparent;
   bottom: 0;
@@ -106,38 +109,79 @@ h2 {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-left: 20px;
   transition: 0.5s ease-in-out;
 }
 
 .text {
-  color: white;
-  quotes: "";
-  overflow: hidden;
-}
-
-.gallery-item:hover .overlay {
-  height: 5%;
-}
-
-.gallery-item-large {
-  display: block;
   position: absolute;
-  background-color: rgb(128, 0, 21);
-  top: 10px;
-  left: 10px;
-  max-width: 600px;
-  border: 1px solid red; /* For debugging purposes */
-  z-index: 1;
+  color: white;
+  font-size: 20px;
+  bottom: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
-.gallery-item-large {
-  display: none;
+.gallery-item:hover .text-overlay {
+  height: 50%;
 }
 
-.gallery-item > img {
+/* Fullscreen image popup */
+.modal-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  transition: opacity 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  border: 1px solid blue; /* For debugging purposes */
+}
+
+/* Popup window for bigger image */
+.modal-container:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-image {
+  display: flex;
+  margin: auto;
+  padding: 100px 20px;
+  max-width: 1600px;
+  top: 0;
+  left: 0;
+  border: 1px solid orange;
+}
+
+.modal-container img {
   display: block;
   width: 100%;
+  max-height: calc(100vh - 200px); /* Limit height of modal to screen size */
+}
+
+.close-button {
+  border: 1px solid red;
+}
+
+/* Style and position the close button for modal view */
+.close-button a {
+  font-size: 3em;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
 }
 
 /* FOOTER */
@@ -148,29 +192,22 @@ footer {
 }
 
 /* Adjust layout for bigger screens to see more */
-@media screen and (min-width: 900px) {
-  .gallery-item:hover .gallery-item-large,
-  .gallery-item:active .gallery-item-large {
-    display: block;
-    position: absolute;
-    background-color: rgb(128, 0, 21);
-    top: 10px;
-    left: 10px;
-    max-width: 600px;
-    border: 1px solid red; /* For debugging purposes */
-    z-index: 1;
+@media screen and (min-width: 901px) {
+}
+
+/* Change to vertical colum mode for mobile devices */
+@media screen and (max-width: 900px) {
+  .gallery {
+    flex-direction: column;
+  }
+
+  /* Disable modal popup window */
+  .gallery-item a:active {
+    pointer-events: none;
+    cursor: default;
   }
 
   .gallery-item img {
-    display: block;
-    margin: 0;
+    width: 100%;
   }
-
-  .gallery-item {
-    width: auto;
-  }
-}
-
-/* Resize gallery items for mobile devices */
-@media screen and (max-width: 500px) {
 }
