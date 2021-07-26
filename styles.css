@@ -8,6 +8,12 @@ Link to introduction video (assignment 2): PUT LINK HERE */
   box-sizing: border-box; /* measure actual box size */
 }
 
+:root {
+  --hue: 100;
+  --sat: 100;
+  --light: 100;
+}
+
 body {
   background-color: whitesmoke;
 }
@@ -103,7 +109,7 @@ h2 {
 /* Image info text overlay */
 .text-overlay {
   position: absolute;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -116,6 +122,7 @@ h2 {
   position: absolute;
   color: white;
   font-size: 20px;
+  opacity: 1;
   bottom: 0;
   left: 0;
   margin-left: 10px;
@@ -123,7 +130,7 @@ h2 {
 }
 
 .gallery-item:hover .text-overlay {
-  height: 50%;
+  height: 15%;
 }
 
 /* Fullscreen image popup */
