@@ -11,7 +11,7 @@
     <div class="container">
         <header>
             <div class="avatar"><img src="images/avatar.png" alt=""></div>
-            <div class="title">Art by DC</div>
+            <div class="title">Art gallery</div>
         </header>
         <nav class="navigation-bar">
             <ul class="menu">
@@ -22,47 +22,133 @@
             </ul>
         </nav>
         <div class="page">
-            <div id="one" class="modal-container">
+            <div id="modal" class="modal-container">
                 <div class="close-button"><a href="#">&times;</a></div>
                 <div class="modal-image">
-                    <img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg" alt="">
+                    <img id="image" src="" alt="">
                 </div>
             </div>
 
             <div id="digital">
                 <h2>Digital</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><a href="#one"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg" alt=""></a>
-                    <div class="text-overlay">
-                        <div class="text">WORLD <br>
-                        Oil on canvas, 8 x 8", 2021.
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/baron_profile.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">ipsum <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/costume_beach.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">consequatur <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/down_knight.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">nisi <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/bridge.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">est <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/street_2_12.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
                         </div>
                     </div>
                 </div>
-                    <div class="gallery-item"><img src="images/two.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/three.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/four.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/five.svg" alt=""></div>
-                </div>
             </div>
+
             <div id="oils">
                 <h2>Oil Paintings</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><img src="images/one.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/two.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/three.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/four.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/five.svg" alt=""></div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-Portrait-of-Tikhov.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Dr_Simarro_at_the_microscope.JPG" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-The-manicure-portrait-of-Mademoiselle-Girmond.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div id="sketches">
                 <h2>Sketches</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><img src="images/one.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/two.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/three.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/four.svg" alt=""></div>
-                    <div class="gallery-item"><img src="images/five.svg" alt=""></div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw001.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/headdraw_005.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw002.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/figure_draw002.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/doug.jpg" alt=""></a>
+                        <div class="text-overlay">
+                            <div class="text">WORLD <br>
+                            Oil on canvas, 8 x 8", 2021.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="about">
@@ -73,5 +159,7 @@
         <div>Copyright 2021</div>
     </footer>
     </div>
+
+    <script src="code.js"></script>
 </body>
 </html>
