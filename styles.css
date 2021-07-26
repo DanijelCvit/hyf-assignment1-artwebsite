@@ -23,16 +23,16 @@ header {
   display: flex;
   justify-content: right;
   background-color: rgb(236, 236, 236);
-  border: 1px solid transparent; /* For debugging purposes */
+  border: solid transparent; /* For debugging purposes */
 }
 
 .avatar {
-  margin: 10px 20px 10px 20px;
+  margin: 10px 20px;
   border: 1px solid red; /* For debugging purposes */
 }
 
 .avatar img {
-  width: 100px;
+  width: 92px;
   border-radius: 50%;
   display: block;
 }
@@ -50,9 +50,11 @@ header {
   position: sticky;
   width: 100%;
   top: 0px;
-  background-color: teal;
+  padding: 5px 0px;
+  background-color: black;
   z-index: 2;
-  border: 1px solid transparent; /* For debugging purposes */
+  border-top: 1px solid black; /* For debugging purposes */
+  border-bottom: 1px solid black; /* For debugging purposes */
 }
 
 .menu {
@@ -69,15 +71,15 @@ header {
 }
 
 .menu a {
-  color: black;
+  color: white; /* Change menu items color here */
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin: 40px 0 20px 20px;
+  text-decoration: underline;
 }
 
 /*------------------------------- GALLERY ------------------------------------*/
@@ -187,6 +189,8 @@ h2 {
 footer {
   background-color: black;
   color: white;
+  padding: 10px;
+  text-align: center;
   /*border: 1px solid red; /* For debugging purposes */
 }
 
@@ -196,6 +200,10 @@ footer {
 
 /* Change to vertical colum mode for mobile devices */
 @media screen and (max-width: 900px) {
+  .title {
+    font-size: 9vw;
+  }
+
   .gallery {
     flex-direction: column;
   }
