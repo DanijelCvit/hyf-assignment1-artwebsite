@@ -71,6 +71,7 @@ header {
 .menu a {
   color: white; /* Change menu items color here */
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .menu a:hover {
@@ -296,5 +297,9 @@ footer a {
   .gallery-item img {
     height: 100%;
     width: 100%;
+  }
+
+  #about {
+    max-width: 100vw;
   }
 }
