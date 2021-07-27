@@ -3,9 +3,14 @@ window.onload = function(){
     document.location.hash = "";
 }
 
-/* Set clicked on image as modal popup source */
+/* Set modal source to clicked image and set close button target to originating gallery */
 function setModalSource(event){
     image.src = event.target.src;
+
+    let hash = image.src.split(`#`)[1];
+
+    cbutton.setAttribute("href", `#${hash}`);
+
 }
 
 

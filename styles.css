@@ -8,48 +8,41 @@ Link to introduction video (assignment 2): PUT LINK HERE */
   box-sizing: border-box; /* measure actual box size */
 }
 
-:root {
-  --hue: 100;
-  --sat: 100;
-  --light: 100;
-}
-
 body {
   background-color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .page {
+  position: relative;
   max-width: 1600px;
   margin: 0 auto;
+  border: 1px solid transparent;
 }
 
-/* Add avatar to header and title box */
+h2 {
+  font-weight: normal;
+  padding: 10px;
+}
+
+/*------------------------------- HEADER -------------------------------*/
+
+/* Add avatar and title box */
 header {
   align-items: center;
   display: flex;
-  justify-content: right;
-  background-color: rgb(236, 236, 236);
+  justify-content: center;
+  background-color: whitesmoke;
   border: solid transparent; /* For debugging purposes */
-}
-
-.avatar {
-  margin: 10px 20px;
-  border: 1px solid red; /* For debugging purposes */
-}
-
-.avatar img {
-  width: 92px;
-  border-radius: 50%;
-  display: block;
 }
 
 .title {
   width: 80%;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left;
+  text-align: center;
   font-size: 5em;
-  border: 1px solid red; /* For debugging purposes */
 }
+
+/*------------------------------- NAVIGATION -------------------------------*/
 
 /* Pin nav bar to top and set menu items horizontally and align to right */
 .navigation-bar {
@@ -59,8 +52,7 @@ header {
   padding: 5px 0px;
   background-color: black;
   z-index: 2;
-  border-top: 1px solid black; /* For debugging purposes */
-  border-bottom: 1px solid black; /* For debugging purposes */
+  box-shadow: 0px 5px 18px #888888;
 }
 
 .menu {
@@ -78,21 +70,29 @@ header {
 
 .menu a {
   color: white; /* Change menu items color here */
-  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  margin: 40px 0 20px 20px;
+.menu a:hover {
   text-decoration: underline;
 }
 
-/*------------------------------- GALLERY ------------------------------------*/
+/*------------------------------- GALLERY -------------------------------*/
+
+#digital,
+#oils,
+#sketches {
+  margin: 20px 0;
+}
+
 .gallery {
   display: flex;
   overflow-x: auto;
-  margin: 0px 20px 0px 20px;
+}
+#digital:target,
+#oils:target,
+#sketches:target {
+  box-shadow: 0px 5px 18px #888888;
 }
 
 /* Set item position to relative as anchor for overlay */
@@ -121,6 +121,7 @@ h2 {
 .text {
   position: absolute;
   color: white;
+  font-style: italic;
   font-size: 20px;
   opacity: 1;
   bottom: 0;
@@ -130,8 +131,10 @@ h2 {
 }
 
 .gallery-item:hover .text-overlay {
-  height: 15%;
+  height: 70px;
 }
+
+/*------------------------------- MODAL -------------------------------*/
 
 /* Fullscreen image popup */
 .modal-container {
@@ -147,7 +150,6 @@ h2 {
   visibility: hidden;
   opacity: 0;
   z-index: 2;
-  border: 1px solid blue; /* For debugging purposes */
 }
 
 /* Popup window for bigger image */
@@ -163,7 +165,6 @@ h2 {
   max-width: 1600px;
   top: 0;
   left: 0;
-  border: 1px solid orange;
 }
 
 .modal-container img {
@@ -171,10 +172,6 @@ h2 {
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 200px); /* Limit height of modal to screen height */
-}
-
-.close-button {
-  border: 1px solid red;
 }
 
 /* Style and position the close button for modal view */
@@ -192,14 +189,89 @@ h2 {
   line-height: 50px;
 }
 
-/* FOOTER */
+/*------------------------------- ABOUT -------------------------------*/
+
+#about {
+  display: flex;
+  position: absolute;
+  margin-top: 5px;
+  width: 0;
+  top: 0px;
+  right: 0px;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+#about:target {
+  visibility: visible;
+  width: 500px;
+}
+
+.about-table {
+  background-color: whitesmoke;
+  padding: 5px;
+  box-shadow: 5px 5px 18px #888888;
+}
+
+#about td {
+  padding: 3px 10px 3px 2px;
+  vertical-align: text-top;
+  min-width: 80px;
+}
+
+td.nowrap {
+  white-space: nowrap;
+}
+
+.avatar {
+  z-index: 1;
+}
+
+.avatar img {
+  width: 75px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 18px #888888;
+}
+
+.close-about {
+  font-size: 2.5em;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.close-about a {
+  text-decoration: none;
+}
+
+/*------------------------------- FOOTER -------------------------------*/
+
 footer {
+  display: flex;
+  justify-content: left;
   background-color: black;
   color: white;
   padding: 10px;
   text-align: center;
   /*border: 1px solid red; /* For debugging purposes */
 }
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#copyright {
+  margin: 0 20px 0 10px;
+}
+
+#mailto:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------- @MEDIA -------------------------------*/
 
 /* Adjust layout for bigger screens to see more */
 @media screen and (min-width: 901px) {
@@ -224,6 +296,5 @@ footer {
   .gallery-item img {
     height: 100%;
     width: 100%;
-    padding-bottom: 10px;
   }
 }

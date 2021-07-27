@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><img src="images/avatar.png" alt=""> Art by DC</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <!------------------>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="avatar"><img src="images/avatar.png" alt=""></div>
             <div class="title">ART GALLERY</div>
         </header>
         <nav class="navigation-bar">
             <ul class="menu">
-            <li><a href="#digital">DIGITAL</a></li>
+            <li><div class="underscore"><a href="#digital">DIGITAL</a></div></li>
             <li><a href="#oils">OIL PAINTINGS</a></li>
             <li><a href="#sketches">SKETCHES</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -23,139 +28,147 @@
         </nav>
         <div class="page">
             <div id="modal" class="modal-container">
-                <div class="close-button"><a href="#">&times;</a></div>
+                <div class="close-button"><a id="cbutton" href="#">&times;</a></div>
                 <div class="modal-image">
                     <img id="image" src="" alt="">
                 </div>
             </div>
-
+                <div id="about">
+                    <div class="close-about"><a href="#">&times;</a></div>
+                    <div class="avatar"><img src="images/avatar.png" alt=""></div>
+                    <table class="about-table">  
+                        <tr><td>Summary</td><td><p>Iusto doloremque omnis omnis quia exercitationem doloremque ducimus est. Nesciunt sapiente perferendis porro numquam ut sunt. Natus delectus consequuntur est sapiente. Quidem vero et ad itaque. Nobis voluptas nobis similique et autem amet consectetur explicabo quisquam.</p></td></tr>
+                        <tr><td>Contact</td><td><a href="mailto:website@random.nl">artist@website.com</a></td></tr>
+                        <tr><td class="nowrap">Available for</td><td>Full Time Emplyment, Freelance</td></tr>
+                        <tr><td>Skills</td><td>Concept Design, Concept Art, Illustration, Character Design</td></tr>
+                        <tr><td>Software</td><td> Photoshop CS6, Clip Studio, Procreate </td></tr>
+                        <tr><td>Clients</td><td>Konami, Sony, Microsoft, Disney</td></tr>
+                    </table>
+                </div>            
             <div id="digital">
                 <h2>Digital</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/baron_profile.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/baron_profile.jpg#digital" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">ipsum, 2021
+                            <div class="text">Ipsum <br>
+                               Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/costume_beach.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/costume_beach.jpg#digital" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">consequatur <br>
-                            Oil on canvas, 8 x 8", 2021.
+                            <div class="text">Consequatur <br>
+                                Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/down_knight.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/down_knight.jpg#digital" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">nisi <br>
-                            Oil on canvas, 8 x 8", 2021.
+                            <div class="text">Nisi <br>
+                                Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/bridge.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/bridge.jpg#digital" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">est <br>
-                            Oil on canvas, 8 x 8", 2021.
+                            <div class="text">Est <br>
+                                Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/street_2_12.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/street_2_12.jpg#digital" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                            <div class="text">Et <br>
+                                Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div id="oils">
                 <h2>Oil Paintings</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg#oils" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                            <div class="text">Fuga <br>
+                          Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-Portrait-of-Tikhov.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-Portrait-of-Tikhov.jpg#oils" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Dr_Simarro_at_the_microscope.JPG" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Dr_Simarro_at_the_microscope.JPG#oils" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-The-manicure-portrait-of-Mademoiselle-Girmond.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-The-manicure-portrait-of-Mademoiselle-Girmond.jpg#oils" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg#oils" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div id="sketches">
                 <h2>Sketches</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw001.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw001.jpg#sketches" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Red charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/headdraw_005.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/headdraw_005.jpg#sketches" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Graphite on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw002.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw002.jpg#sketches" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Graphite on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/figure_draw002.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/figure_draw002.jpg#sketches" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/doug.jpg" alt=""></a>
+                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/doug.jpg#sketches" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">WORLD <br>
-                            Oil on canvas, 8 x 8", 2021.
+                                Charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="about">
-                <h2>About</h2>
-            </div>
         </div>
     <footer>
-        <div><p>Copyright 2021</p></div>
+        <div id="copyright"><p>Copyright 2021</p></div>
+        <div id="mailto"><p></p></div>
     </footer>
     </div>
 
