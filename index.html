@@ -20,7 +20,7 @@
         </header>
         <nav class="navigation-bar">
             <ul class="menu">
-            <li><div class="underscore"><a href="#digital">DIGITAL</a></div></li>
+            <li><a href="#digital">DIGITAL</a></li>
             <li><a href="#oils">OIL PAINTINGS</a></li>
             <li><a href="#sketches">SKETCHES</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -28,7 +28,9 @@
         </nav>
         <div class="page">
             <div id="modal" class="modal-container">
-                <div class="close-button"><a id="cbutton" href="#">&times;</a></div>
+                <div class="button prev"><a id href="#modal" onclick="prevModalImage()">&lt;</a></div>
+                <div class="button next"><a id href="#modal" onclick="nextModalImage()">&gt;</a></div>
+                <div class="button close"><a onclick="closeModalView()">&times;</a></div>
                 <div class="modal-image">
                     <img id="image" src="" alt="">
                 </div>
@@ -45,38 +47,38 @@
                         <tr><td>Clients</td><td>Konami, Sony, Microsoft, Disney</td></tr>
                     </table>
                 </div>            
-            <div id="digital">
+            <div id="digital" onclick="setHash('digital')">
                 <h2>Digital</h2>
-                <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/baron_profile.jpg#digital" alt=""></a>
+                <div class="gallery" onclick="setModalSource(event)">
+                    <div class="gallery-item"><a href="#modal"><img src="images2/baron_profile.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Ipsum <br>
                                Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/costume_beach.jpg#digital" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/costume_beach.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Consequatur <br>
                                 Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/down_knight.jpg#digital" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/down_knight.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Nisi <br>
                                 Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/bridge.jpg#digital" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/bridge.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Est <br>
                                 Photoshop CS6, 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/street_2_12.jpg#digital" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/street_2_12.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Et <br>
                                 Photoshop CS6, 2021
@@ -85,80 +87,80 @@
                     </div>
                 </div>
             </div>
-            <div id="oils">
+            <div id="oils" onclick="setHash('oils')">
                 <h2>Oil Paintings</h2>
-                <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg#oils" alt=""></a>
+                <div class="gallery" onclick="setModalSource(event)">
+                    <div class="gallery-item"><a href="#modal"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg" alt=""></a>
                         <div class="text-overlay">
                             <div class="text">Fuga <br>
                           Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-Portrait-of-Tikhov.jpg#oils" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/Nicolai-Fechin-Portrait-of-Tikhov.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Reiciendis <br>
                                 Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Portrait_of_Dr_Simarro_at_the_microscope.JPG#oils" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/Portrait_of_Dr_Simarro_at_the_microscope.JPG" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Magnam <br>
                                 Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/Nicolai-Fechin-The-manicure-portrait-of-Mademoiselle-Girmond.jpg#oils" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/Nicolai-Fechin-The-manicure-portrait-of-Mademoiselle-Girmond.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Laudantium <br>
                                 Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg#oils" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/John_Singer_Sargent_-_Mademoiselle_Suzanne_Poirson_(1884).jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Asperiores <br>
                                 Oil on canvas, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="sketches">
+            <div id="sketches" onclick="setHash('sketches')">
                 <h2>Sketches</h2>
-                <div class="gallery">
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw001.jpg#sketches" alt=""></a>
+                <div class="gallery" onclick="setModalSource(event)">
+                    <div class="gallery-item"><a href="#modal"><img src="images2/head_draw001.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Accusamus <br>
                                 Red charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/headdraw_005.jpg#sketches" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/headdraw_005.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Quis <br>
                                 Graphite on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/head_draw002.jpg#sketches" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/head_draw002.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Unde <br>
                                 Graphite on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/figure_draw002.jpg#sketches" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/figure_draw002.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Nulla <br>
                                 Charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-item"><a href="#modal" onclick="setModalSource(event)"><img src="images2/doug.jpg#sketches" alt=""></a>
+                    <div class="gallery-item"><a href="#modal"><img src="images2/doug.jpg" alt=""></a>
                         <div class="text-overlay">
-                            <div class="text">WORLD <br>
+                            <div class="text">Corporis <br>
                                 Charcoal on paper, 8 x 8", 2021
                             </div>
                         </div>

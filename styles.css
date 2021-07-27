@@ -10,7 +10,7 @@ Link to introduction video (assignment 2): PUT LINK HERE */
 
 body {
   background-color: whitesmoke;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .page {
@@ -57,11 +57,16 @@ header {
 
 .menu {
   display: flex;
-  justify-content: flex-end;
+  overflow-x: scroll; /* Make it scrollable for mobile */
 }
+
 .menu > li {
-  display: inline;
   margin-right: 20px;
+}
+
+/* Push menu elements to the right */
+.menu > li:first-of-type {
+  margin-left: auto;
 }
 
 .menu > li:last-of-type {
@@ -151,6 +156,7 @@ header {
   visibility: hidden;
   opacity: 0;
   z-index: 2;
+  background-color: teal;
 }
 
 /* Popup window for bigger image */
@@ -164,8 +170,7 @@ header {
   margin: 0 auto;
   padding: 100px 20px;
   max-width: 1600px;
-  top: 0;
-  left: 0;
+  background-color: lightcoral;
 }
 
 .modal-container img {
@@ -173,21 +178,40 @@ header {
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 200px); /* Limit height of modal to screen height */
+  border: 5px solid lightskyblue;
 }
 
-/* Style and position the close button for modal view */
-.close-button a {
+/* Style and position the buttons for modal view */
+.button {
   font-size: 3em;
   position: absolute;
-  top: 50px;
-  right: 100px;
   height: 50px;
   width: 50px;
   background-color: black;
-  color: white;
-  text-decoration: none;
   text-align: center;
   line-height: 50px;
+}
+
+.close {
+  top: 50px;
+  right: 100px;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+
+.button a {
+  color: white;
+  text-decoration: none;
 }
 
 /*------------------------------- ABOUT -------------------------------*/
@@ -289,7 +313,7 @@ footer a {
   }
 
   /* Disable modal popup window */
-  .gallery-item:active {
+  .gallery-item a:active {
     pointer-events: none;
     cursor: default;
   }
@@ -301,5 +325,9 @@ footer a {
 
   #about {
     max-width: 100vw;
+  }
+
+  #about {
+    display: block;
   }
 }
