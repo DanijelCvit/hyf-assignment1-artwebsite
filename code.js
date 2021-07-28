@@ -1,24 +1,32 @@
+/* Stores gallery id for previous/next buttons in modal view */
 let galleryHash = "";
 
-/* Remove target # on page refresh */
+/* Remove target # on page refresh, clears modal view */
 window.onload = function(){
     document.location.hash = "";
 }
 
-function setHash(hashValue) {
+/* Stores gallery id of clicked image. This function is mainly called when setModalSource is triggered
+(bubbling) */
+function setHash(hashValue){
     galleryHash = hashValue;
+
+    closeModalView();
+    underlineItem();
 } 
 
-/* Set modal source to clicked image and set close button target to originating gallery */
+/* Set modal view source to clicked image */
 function setModalSource(event){
     image.src = event.target.src;
 }
 
-function closeModalView() {
+/* On exit of modal view set url location back to originating gallery */
+function closeModalView(){
     document.location.hash = galleryHash;
 }
 
-/* Go to previous image in the gallery */
+/* Finds current image index and descreases it by one to get previous image,
+ (wraps around on first image) */
 function prevModalImage(){
 
    let galleryID = galleryHash;
@@ -42,8 +50,9 @@ function prevModalImage(){
    }
 }
 
-/* Go to the next image in the gallery */
-function nextModalImage(){
+/* Finds current image index and increases it by one to get next the image,
+ (wraps around on last image) */
+ function nextModalImage(){
 
     let galleryID = galleryHash;
     let galleryItems = document.body.querySelectorAll(`#${galleryID} .gallery-item`);
@@ -66,6 +75,21 @@ function nextModalImage(){
     } 
 }
 
+function underlineItem(){
+
+   let menuItems =  document.body.querySelectorAll(`.menu a`);
+   // let id = elem.split('#')[1];
+
+     for (let elem of menuItems){
+
+       if (elem.href.includes(`#${galleryHash}`)) {
+          elem.classList.add(`underline`);
+      }
+       else {
+           elem.classList.remove(`underline`);
+        }
+   }
+}
 
 
 
