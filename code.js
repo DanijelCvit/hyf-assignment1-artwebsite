@@ -99,7 +99,7 @@ function switchGalleryFocus(){
     let galleries = document.body.querySelectorAll('.gallery-container');
     let height = document.getElementById('showscroll');
 
-    height.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
+   // height.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
 
     for (let i = 0; i < galleries.length; i++){
 
