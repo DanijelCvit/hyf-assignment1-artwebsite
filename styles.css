@@ -92,9 +92,7 @@ a.underline {
 }
 /*------------------------------- GALLERY -------------------------------*/
 
-#digital,
-#oils,
-#sketches {
+.gallery-container {
   margin: 20px 0;
 }
 

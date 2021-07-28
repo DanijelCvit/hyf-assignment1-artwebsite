@@ -105,7 +105,7 @@ function switchGalleryFocus(){
 
         let coords = galleries[i].getBoundingClientRect();
      
-        if ((coords.top < 50) && (coords.bottom > 100)){
+        if ((coords.top <= 20) && (coords.bottom > 0)){
 
             galleries[i].classList.add(`shadow`);
             setHash(galleries[i].id);
