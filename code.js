@@ -76,20 +76,22 @@ function prevModalImage(){
 }
 
 /* Underlines the menu item of the gallery that's in focus */
-function underlineItem(){
+function underlineItem(menuID, underscore){
 
    let menuItems =  document.body.querySelectorAll(`.menu a`);
 
-
     for (let elem of menuItems){
 
-        if (elem.href.includes(`#${galleryHash}`)) {
-            elem.classList.add(`underline`);
-        }
-        else {
-            elem.classList.remove(`underline`);
-        }
-   }
+        if (elem.href.includes(`#${menuID}`)) {
+            if (underscore){
+                elem.classList.add(`underline`);
+            }
+            else {
+                elem.classList.remove(`underline`);
+            }
+   
+         }
+    }
 }
 
 /* Determines which gallery is at the top of the window and adds a box shadow to it and underlines
@@ -97,25 +99,39 @@ it's menu item */
 function switchGalleryFocus(){
 
     let galleries = document.body.querySelectorAll('.gallery-container');
-    let height = document.getElementById('showscroll');
+    let height1 = document.getElementById('showscroll1');
+    let height2 = document.getElementById('showscroll2');
+    let height3 = document.getElementById('showscroll3');
+    let height4 = document.getElementById('showscroll4');
+    let height5 = document.getElementById('showscroll5');
+    let height6 = document.getElementById('showscroll6');
 
-   // height.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
+
+    height1.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
+    height2.innerHTML = galleries[0].getBoundingClientRect().bottom + 'px';
+    height3.innerHTML = galleries[1].getBoundingClientRect().top + 'px';
+    height4.innerHTML = galleries[1].getBoundingClientRect().bottom + 'px';
+    height5.innerHTML = galleries[2].getBoundingClientRect().top + 'px';
+    height6.innerHTML = galleries[2].getBoundingClientRect().bottom + 'px';
+
 
     for (let i = 0; i < galleries.length; i++){
 
         let coords = galleries[i].getBoundingClientRect();
      
-        if ((coords.top <= 20) && (coords.bottom > 0)){
-
-            galleries[i].classList.add(`shadow`);
-            setHash(galleries[i].id);
-            underlineItem();
-            break;
+        if ((coords.top <= 50) && (coords.bottom > 30)){
+            if (galleries[i].classList.contains(`shadow`) == false){
+                galleries[i].classList.add(`shadow`);
+                underlineItem(galleries[i].id, true);
+               // alert(galleries[i].id + ' ' + galleryHash);
+            }
         }
         else {
-            galleries[i].classList.remove(`shadow`);
-            setHash('#');
-            underlineItem();
+            if (galleries[i].classList.contains(`shadow`)){
+                galleries[i].classList.remove(`shadow`);
+                underlineItem(galleries[i].id, false);
+               // alert(galleries[i].id + ' ' + galleryHash);
+            }
         }
     }
 }

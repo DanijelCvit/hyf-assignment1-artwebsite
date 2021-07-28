@@ -87,13 +87,19 @@ a.underline {
   text-decoration: underline;
 }
 
-#showscroll {
+#showscroll1,
+#showscroll2,
+#showscroll3,
+#showscroll4,
+#showscroll5,
+#showscroll6 {
   color: white;
 }
 /*------------------------------- GALLERY -------------------------------*/
 
 .gallery-container {
   margin: 20px 0;
+  border: 1px solid red;
 }
 
 .gallery {
@@ -247,6 +253,7 @@ box-shadow: 0px 5px 18px #888888;
 .about-table {
   background-color: whitesmoke;
   padding: 5px;
+  box-shadow: 0px 5px 18px red;
 }
 
 #about td {
