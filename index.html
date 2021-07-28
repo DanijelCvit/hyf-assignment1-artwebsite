@@ -20,10 +20,11 @@
         </header>
         <nav class="navigation-bar">
             <ul class="menu">
-            <li><a href="#digital" onclick="setHash('digital')">DIGITAL</a></li>
-            <li><a href="#oils" onclick="setHash('oils')">OIL PAINTINGS</a></li>
-            <li><a href="#sketches" onclick="setHash('sketches')">SKETCHES</a></li>
-            <li><a href="#about" onclick="setHash('about')">ABOUT</a></li>
+            <li><div id="showscroll"></div></li>
+            <li><a href="#digital" >DIGITAL</a></li>
+            <li><a href="#oils" >OIL PAINTINGS</a></li>
+            <li><a href="#sketches" >SKETCHES</a></li>
+            <li><a href="#about" >ABOUT</a></li>
             </ul>
         </nav>
         <div class="page">
@@ -47,7 +48,7 @@
                         <tr><td>Clients</td><td>Konami, Sony, Microsoft, Disney</td></tr>
                     </table>
                 </div>            
-            <div id="digital" onclick="setHash('digital')">
+            <div id="digital" class="gallery-container" onclick="setHash('digital')">
                 <h2>Digital</h2>
                 <div class="gallery" onclick="setModalSource(event)">
                     <div class="gallery-item"><a href="#modal"><img src="images2/baron_profile.jpg" alt=""></a>
@@ -87,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div id="oils" onclick="setHash('oils')">
+            <div id="oils" class="gallery-container" onclick="setHash('oils')">
                 <h2>Oil Paintings</h2>
                 <div class="gallery" onclick="setModalSource(event)">
                     <div class="gallery-item"><a href="#modal"><img src="images2/Portrait_of_Isabella_Brant_by_Peter_Paul_Rubens.jpg" alt=""></a>
@@ -127,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div id="sketches" onclick="setHash('sketches')">
+            <div id="sketches" class="gallery-container" onclick="setHash('sketches')">
                 <h2>Sketches</h2>
                 <div class="gallery" onclick="setModalSource(event)">
                     <div class="gallery-item"><a href="#modal"><img src="images2/head_draw001.jpg" alt=""></a>

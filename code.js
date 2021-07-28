@@ -1,18 +1,18 @@
 /* Stores gallery id for previous/next buttons in modal view */
-let galleryHash = "";
+let galleryHash = "#";
 
 /* Remove target # on page refresh, clears modal view */
 window.onload = function(){
     document.location.hash = "";
 }
 
-/* Stores gallery id of clicked image. This function is mainly called when setModalSource is triggered
-(bubbling) */
+/* Check scroll height and switch focus to visible gallery */
+window.addEventListener('scroll', switchGalleryFocus);
+
+/* Stores gallery id of clicked image for prevModalImage/nextModalImage. Also updates selected gallery 
+in menu and body */
 function setHash(hashValue){
     galleryHash = hashValue;
-
-    closeModalView();
-    underlineItem();
 } 
 
 /* Set modal view source to clicked image */
@@ -75,21 +75,49 @@ function prevModalImage(){
     } 
 }
 
+/* Underlines the menu item of the gallery that's in focus */
 function underlineItem(){
 
    let menuItems =  document.body.querySelectorAll(`.menu a`);
-   // let id = elem.split('#')[1];
 
-     for (let elem of menuItems){
 
-       if (elem.href.includes(`#${galleryHash}`)) {
-          elem.classList.add(`underline`);
-      }
-       else {
-           elem.classList.remove(`underline`);
+    for (let elem of menuItems){
+
+        if (elem.href.includes(`#${galleryHash}`)) {
+            elem.classList.add(`underline`);
+        }
+        else {
+            elem.classList.remove(`underline`);
         }
    }
 }
 
+/* Determines which gallery is at the top of the window and adds a box shadow to it and underlines
+it's menu item */
+function switchGalleryFocus(){
+
+    let galleries = document.body.querySelectorAll('.gallery-container');
+    let height = document.getElementById('showscroll');
+
+    height.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
+
+    for (let i = 0; i < galleries.length; i++){
+
+        let coords = galleries[i].getBoundingClientRect();
+     
+        if ((coords.top < 50) && (coords.bottom > 100)){
+
+            galleries[i].classList.add(`shadow`);
+            setHash(galleries[i].id);
+            underlineItem();
+            break;
+        }
+        else {
+            galleries[i].classList.remove(`shadow`);
+            setHash('#');
+            underlineItem();
+        }
+    }
+}
 
 
