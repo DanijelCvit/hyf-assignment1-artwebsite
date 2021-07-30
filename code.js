@@ -13,6 +13,8 @@ window.addEventListener('scroll', switchGalleryFocus);
 in menu and body */
 function setHash(hashValue){
     galleryHash = hashValue;
+
+    alert("yolo");
 } 
 
 /* Set modal view source to clicked image */
@@ -118,7 +120,8 @@ function switchGalleryFocus(){
         }
     }
 }
-
+/* Scroll respective gallery to the left an amout of pixels when pressing the prev button 
+and hides the button when it hits the left edge */
 function scrollGalleryLeft(galleryID, event){
 
     let elem = document.body.querySelector(`#${galleryID} .gallery`);
@@ -143,10 +146,12 @@ function scrollGalleryLeft(galleryID, event){
         leftbutton.style.display = 'none';
     }
 
-    event.stopPropagation();
+    event.stopPropagation(); // Stop bubbling to the parent tags
 
 }
 
+/* Scroll respective gallery to the right an amout of pixels when pressing the next button 
+and hides the button when it hits the right edge */
 function scrollGalleryRight(galleryID, event){
 
     let elem = document.body.querySelector(`#${galleryID} .gallery`);
@@ -171,7 +176,7 @@ function scrollGalleryRight(galleryID, event){
         rightbutton.style.display = 'none';
     }
 
-    event.stopPropagation();
+    event.stopPropagation(); // Stop bubbling to the parent tags
 }
 
 
