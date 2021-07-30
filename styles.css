@@ -1,5 +1,6 @@
 /* Creator: Danijel Cvitkusic
-Link to introduction video (assignment 2): PUT LINK HERE */
+Link to introduction video (assignment 2): PUT LINK HERE 
+Website is also available on github: https://github.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io */
 
 /* Reset some style defaults used by browser */
 * {
@@ -11,6 +12,7 @@ Link to introduction video (assignment 2): PUT LINK HERE */
 body {
   background-color: whitesmoke;
   font-family: "Roboto", sans-serif;
+  height: 4000px;
 }
 
 .page {
@@ -50,7 +52,7 @@ header {
   top: 0px;
   padding: 5px 0px;
   background-color: black;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0px 5px 18px #888888;
 }
 
@@ -83,9 +85,15 @@ header {
 }
 
 /*------------------------------- GALLERY -------------------------------*/
+#digital,
+#oils,
+#sketches {
+  position: relative;
+  border: 1px solid transparent;
+}
 
 .gallery-container {
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
 .gallery {
@@ -217,12 +225,16 @@ header {
 
 /*------------------------------- ABOUT -------------------------------*/
 
+.about-header {
+  display: flex;
+}
+
 #about .about-container {
   display: flex;
   position: absolute;
   margin-top: 5px;
   width: 0;
-  top: 0px;
+  top: 10px;
   right: 0px;
   text-decoration: none;
   z-index: 2;
@@ -234,6 +246,7 @@ header {
 #about:target .about-container {
   visibility: visible;
   width: 500px;
+  padding: 5px 5px 10px 5px;
 }
 
 .about-table {
@@ -253,7 +266,7 @@ td.nowrap {
 }
 
 .avatar {
-  z-index: 1;
+  z-index: 2;
 }
 
 .avatar img {
@@ -273,6 +286,10 @@ td.nowrap {
   color: black;
 }
 
+a.onabout {
+  text-decoration: underline;
+}
+
 /*------------------------------- FOOTER -------------------------------*/
 
 footer {
@@ -281,6 +298,7 @@ footer {
   background-color: black;
   color: white;
   padding: 10px;
+  margin-top: 10px;
   text-align: center;
   box-shadow: 0px -5px 18px #888888;
 
@@ -347,6 +365,7 @@ footer a {
   /* Draw shadow around gallery when scrolling over it */
   .shadow {
     box-shadow: 0px 5px 18px #888888;
+    transition: 0.2s ease-in-out;
   }
 
   #about .about-container {
@@ -356,5 +375,13 @@ footer a {
 
   .button {
     display: none;
+  }
+
+  .avatar {
+    order: -1;
+  }
+
+  .close-about {
+    margin-left: auto;
   }
 }

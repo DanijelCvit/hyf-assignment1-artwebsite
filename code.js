@@ -107,13 +107,13 @@ function switchGalleryFocus(){
         if ((coords.top <= 50) && (coords.bottom > 30)){
             if (galleries[i].classList.contains(`shadow`) == false){
                 galleries[i].classList.add(`shadow`);
-                underlineItem(galleries[i].id, true, 'onscroll');
+                underlineItem(galleries[i].parentNode.id, true, 'onscroll');
             }
         }
         else {
             if (galleries[i].classList.contains(`shadow`)){
                 galleries[i].classList.remove(`shadow`);
-                underlineItem(galleries[i].id, false, 'onscroll');
+                underlineItem(galleries[i].parentNode.id, false, 'onscroll');
             }
         }
     }

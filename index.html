@@ -20,10 +20,10 @@
         </header>
         <nav class="navigation-bar">
             <ul class="menu">
-            <li><a href="#digital" >DIGITAL</a></li>
-            <li><a href="#oils" >OIL PAINTINGS</a></li>
-            <li><a href="#sketches" >SKETCHES</a></li>
-            <li><a href="#about" onclick="underlineItem('about', true, 'onhover')">ABOUT</a></li>
+            <li><a href="#digital" onclick="underlineItem('about', false, 'onabout')">DIGITAL</a></li>
+            <li><a href="#oils" onclick="underlineItem('about', false, 'onabout')">OIL PAINTINGS</a></li>
+            <li><a href="#sketches" onclick="underlineItem('about', false, 'onabout')">SKETCHES</a></li>
+            <li><a href="#about" onclick="underlineItem('about', true, 'onabout')">ABOUT</a></li>
             </ul>
         </nav>
         <div class="page">
@@ -37,8 +37,10 @@
             </div>
                 <div id="about">
                 <div class="about-container">
-                    <div class="close-about"><a href="#" onclick="underlineItem('about', false, 'onhover')">&times;</a></div>
+                    <div class="about-header">
+                    <div class="close-about"><a href="#" onclick="underlineItem('about', false, 'onabout')">&times;</a></div>
                     <div class="avatar"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images/avatar.png" alt=""></div>
+                    </div>
                     <table class="about-table">  
                         <tr><td>Summary</td><td><p>Iusto doloremque omnis omnis quia exercitationem doloremque ducimus est. Nesciunt sapiente perferendis porro numquam ut sunt. Natus delectus consequuntur est sapiente. Quidem vero et ad itaque. Nobis voluptas nobis similique et autem amet consectetur explicabo quisquam.</p></td></tr>
                         <tr><td>Contact</td><td><a href="mailto:website@random.nl">artist@website.com</a></td></tr>
@@ -49,50 +51,53 @@
                     </table>
                 </div>  
             </div>     
-            <div id="digital" class="gallery-container" onmouseout="underlineItem('digital', false, 'onhover')" onmouseover="underlineItem('digital', true, 'onhover')" onclick="setHash('digital')">
-                <h2>Digital</h2>
-                <div class="gallery" onclick="setModalSource(event)">
-                    <div class="button gbutton prev" onclick="scrollGalleryLeft('digital')"><a>&lt;</a></div>
-                    <div class="button gbutton next" onclick="scrollGalleryRight('digital', event)"><a >&gt;</a></div> 
-                            <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/baron_profile.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Ipsum <br>
-                               Photoshop CS6, 2021
+            <div id="digital" onmouseout="underlineItem('digital', false, 'onhover')" onmouseover="underlineItem('digital', true, 'onhover')" onclick="setHash('digital')">
+                <div class="gallery-container">
+                    <h2>Digital</h2>
+                    <div class="gallery" onclick="setModalSource(event)">
+                        <div class="button gbutton prev" onclick="scrollGalleryLeft('digital')"><a>&lt;</a></div>
+                        <div class="button gbutton next" onclick="scrollGalleryRight('digital', event)"><a >&gt;</a></div> 
+                                <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/baron_profile.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Ipsum <br>
+                                Photoshop CS6, 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/costume_beach.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Consequatur <br>
-                                Photoshop CS6, 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/costume_beach.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Consequatur <br>
+                                    Photoshop CS6, 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/down_knight.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Nisi <br>
-                                Photoshop CS6, 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/down_knight.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Nisi <br>
+                                    Photoshop CS6, 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/bridge.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Est <br>
-                                Photoshop CS6, 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/bridge.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Est <br>
+                                    Photoshop CS6, 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/street_2_12.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Et <br>
-                                Photoshop CS6, 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/street_2_12.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Et <br>
+                                    Photoshop CS6, 2021
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="oils" class="gallery-container" onmouseout="underlineItem('oils', false, 'onhover')" onmouseover="underlineItem('oils', true, 'onhover')" onclick="setHash('oils')">
-                <h2>Oil Paintings</h2>
+            <div id="oils" onmouseout="underlineItem('oils', false, 'onhover')" onmouseover="underlineItem('oils', true, 'onhover')" onclick="setHash('oils')">
+                <div class="gallery-container">
+                    <h2>Oil Paintings</h2>
                 <div class="gallery" onclick="setModalSource(event)">
                     <div class="button gbutton prev" onclick="scrollGalleryLeft('oils')"><a>&lt;</a></div>
                     <div class="button gbutton next" onclick="scrollGalleryRight('oils')"><a >&gt;</a></div> 
@@ -133,43 +138,46 @@
                     </div>
                 </div>
             </div>
-            <div id="sketches" class="gallery-container" onmouseout="underlineItem('sketches', false, 'onhover')" onmouseover="underlineItem('sketches', true, 'onhover')" onclick="setHash('sketches')">
-                <h2>Sketches</h2>
-                <div class="gallery" onclick="setModalSource(event)">
-                    <div class="button gbutton prev" onclick="scrollGalleryLeft('sketches')"><a>&lt;</a></div>
-                    <div class="button gbutton next" onclick="scrollGalleryRight('sketches')"><a >&gt;</a></div> 
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/head_draw001.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Accusamus <br>
-                                Red charcoal on paper, 8 x 8", 2021
+        </div>
+            <div id="sketches" onmouseout="underlineItem('sketches', false, 'onhover')" onmouseover="underlineItem('sketches', true, 'onhover')" onclick="setHash('sketches')">
+                <div class="gallery-container">
+                    <h2>Sketches</h2>
+                    <div class="gallery" onclick="setModalSource(event)">
+                        <div class="button gbutton prev" onclick="scrollGalleryLeft('sketches')"><a>&lt;</a></div>
+                        <div class="button gbutton next" onclick="scrollGalleryRight('sketches')"><a >&gt;</a></div> 
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/head_draw001.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Accusamus <br>
+                                    Red charcoal on paper, 8 x 8", 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/headdraw_005.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Quis <br>
-                                Graphite on paper, 8 x 8", 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/headdraw_005.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Quis <br>
+                                    Graphite on paper, 8 x 8", 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/head_draw002.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Unde <br>
-                                Graphite on paper, 8 x 8", 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/head_draw002.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Unde <br>
+                                    Graphite on paper, 8 x 8", 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/figure_draw002.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Nulla <br>
-                                Charcoal on paper, 8 x 8", 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/figure_draw002.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Nulla <br>
+                                    Charcoal on paper, 8 x 8", 2021
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/doug.jpg" alt=""></a>
-                        <div class="text-overlay">
-                            <div class="text">Corporis <br>
-                                Charcoal on paper, 8 x 8", 2021
+                        <div class="gallery-item"><a href="#modal"><img src="https://raw.githubusercontent.com/HalfdanWhiteshirt/HalfdanWhiteshirt.github.io/main/images2/doug.jpg" alt=""></a>
+                            <div class="text-overlay">
+                                <div class="text">Corporis <br>
+                                    Charcoal on paper, 8 x 8", 2021
+                                </div>
                             </div>
                         </div>
                     </div>
