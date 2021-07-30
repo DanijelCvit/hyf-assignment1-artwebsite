@@ -1,5 +1,5 @@
-/* Stores gallery id for previous/next buttons in modal view */
-let galleryHash = "#";
+/* Init global variables */
+let galleryHash = "#"; /* Stores gallery id for previous/next buttons in modal view */
 
 /* Remove target # on page refresh, clears modal view */
 window.onload = function(){
@@ -76,7 +76,7 @@ function prevModalImage(){
 }
 
 /* Underlines the menu item of the gallery that's in focus */
-function underlineItem(menuID, underscore){
+function underlineItem(menuID, underscore, selector){
 
    let menuItems =  document.body.querySelectorAll(`.menu a`);
 
@@ -84,10 +84,10 @@ function underlineItem(menuID, underscore){
 
         if (elem.href.includes(`#${menuID}`)) {
             if (underscore){
-                elem.classList.add(`underline`);
+                elem.classList.add(selector);
             }
             else {
-                elem.classList.remove(`underline`);
+                elem.classList.remove(selector);
             }
    
          }
@@ -99,21 +99,6 @@ it's menu item */
 function switchGalleryFocus(){
 
     let galleries = document.body.querySelectorAll('.gallery-container');
-    let height1 = document.getElementById('showscroll1');
-    let height2 = document.getElementById('showscroll2');
-    let height3 = document.getElementById('showscroll3');
-    let height4 = document.getElementById('showscroll4');
-    let height5 = document.getElementById('showscroll5');
-    let height6 = document.getElementById('showscroll6');
-
-
-    height1.innerHTML = galleries[0].getBoundingClientRect().top + 'px';
-    height2.innerHTML = galleries[0].getBoundingClientRect().bottom + 'px';
-    height3.innerHTML = galleries[1].getBoundingClientRect().top + 'px';
-    height4.innerHTML = galleries[1].getBoundingClientRect().bottom + 'px';
-    height5.innerHTML = galleries[2].getBoundingClientRect().top + 'px';
-    height6.innerHTML = galleries[2].getBoundingClientRect().bottom + 'px';
-
 
     for (let i = 0; i < galleries.length; i++){
 
@@ -122,18 +107,71 @@ function switchGalleryFocus(){
         if ((coords.top <= 50) && (coords.bottom > 30)){
             if (galleries[i].classList.contains(`shadow`) == false){
                 galleries[i].classList.add(`shadow`);
-                underlineItem(galleries[i].id, true);
-               // alert(galleries[i].id + ' ' + galleryHash);
+                underlineItem(galleries[i].id, true, 'onscroll');
             }
         }
         else {
             if (galleries[i].classList.contains(`shadow`)){
                 galleries[i].classList.remove(`shadow`);
-                underlineItem(galleries[i].id, false);
-               // alert(galleries[i].id + ' ' + galleryHash);
+                underlineItem(galleries[i].id, false, 'onscroll');
             }
         }
     }
+}
+
+function scrollGalleryLeft(galleryID, event){
+
+    let elem = document.body.querySelector(`#${galleryID} .gallery`);
+    let timer = setInterval(scrollSmooth, 15);
+    let stepCounter = 0;
+
+    function scrollSmooth(){
+
+        stepCounter += 10;
+        elem.scrollLeft -= 10;
+
+        if(stepCounter >= 300){
+            clearInterval(timer);
+        }
+    }
+
+    let rightbutton = elem.querySelector(`.next`);
+    rightbutton.style.display = '';
+
+   if (elem.scrollLeft <= 0){
+    let leftbutton = elem.querySelector(`.prev`);
+        leftbutton.style.display = 'none';
+    }
+
+    event.stopPropagation();
+
+}
+
+function scrollGalleryRight(galleryID, event){
+
+    let elem = document.body.querySelector(`#${galleryID} .gallery`);
+    let timer = setInterval(scrollSmooth, 15);
+    let stepCounter = 0;
+
+    function scrollSmooth(){
+
+        stepCounter += 10;
+        elem.scrollLeft += 10;
+
+        if(stepCounter >= 300){
+            clearInterval(timer);
+        }
+    }
+   
+    let leftbutton = elem.querySelector(`.prev`);
+    leftbutton.style.display = '';
+
+    if (elem.scrollLeft >= (elem.scrollWidth - elem.clientWidth)){
+        let rightbutton = elem.querySelector(`.next`);
+        rightbutton.style.display = 'none';
+    }
+
+    event.stopPropagation();
 }
 
 
