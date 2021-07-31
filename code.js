@@ -13,8 +13,6 @@ window.addEventListener('scroll', switchGalleryFocus);
 in menu and body */
 function setHash(hashValue){
     galleryHash = hashValue;
-
-    alert("yolo");
 } 
 
 /* Set modal view source to clicked image */
