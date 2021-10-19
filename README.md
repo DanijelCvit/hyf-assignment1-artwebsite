@@ -6,4 +6,5 @@ Admittance assignment to HackYourFuture curriculum. I created an artist portfoli
 
 [Demo](https://danijelcvit.github.io/hyf-assignment1-artwebsite/)
 
-<img src="./images/artpage.gif" text-align="center">
+<p align="center"><img src="./images/artpage.gif" >
+</p>
